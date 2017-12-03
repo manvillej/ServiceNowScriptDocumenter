@@ -2,15 +2,14 @@
     var fs = require('fs'),
         Client = require('node-rest-client').Client,
         options = require('minimist')(process.argv.slice(2));
-    if (process.argv.length < 4) {
-        console.log("Please enter {instance} {username} {password}");
+    if (!options.instance || !options.username || !options.password) {
+        console.log("Please use the following command to use this node application:")
+        console.log("node index.js --instance <instancename> --username <username> --password <password>")
         process.exit(1);
     }
-
-    instance = options._[0]
     options_auth = {
-            user: options._[1],
-            password: options._[2]
+            user: options.username,
+            password: options.password
         }
 
     var client = new Client(options_auth);
@@ -35,7 +34,7 @@
     for (var req in requestsToMake) {
         if (requestsToMake.hasOwnProperty(req)) {
             var current = requestsToMake[req];
-            makeRequest(client, instance, current.table, current.filter, current.extension);
+            makeRequest(client, options.instance, current.table, current.filter, current.extension);
         }
     }
     //saveRemoteUpdateSet(options.update_set);
