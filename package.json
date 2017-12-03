@@ -1,6 +1,6 @@
 {
   "name": "ServiceNowScriptDocumenter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Contains ServiceNow documentation",
   "main": "index.js",
   "author": "Justin Bauguess",
@@ -8,9 +8,8 @@
   "readme": "https://github.com/jmbauguess/ServiceNowScriptDocumenter/readme.md",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.5.2",
-    "gulp-git": "^1.2.4",
     "gulp-jsdoc": "^0.1.4",
     "gulp-jshint": "^1.11.0",
     "gulp-rename": "^1.2.2",
@@ -23,5 +22,13 @@
     "jshint-stylish": "^2.0.0",
     "minimist": "^1.1.1",
     "request": "^2.57.0"
+  },
+  "dependencies": {
+    "graceful-fs": "^4.1.11",
+    "gulp-git": "^2.4.2",
+    "gulp-jsdoc3": "^1.0.1",
+    "minimatch": "^3.0.4",
+    "node-rest-client": "^3.1.0",
+    "run-sequence": "^2.2.0"
   }
 }
