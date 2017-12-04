@@ -41,9 +41,11 @@
 
     /**
      * @description Main method - Makes HTTP Get Request to ServiceNow
-     * @param  {string} scriptType A type of script in ServiceNow
-     * @param  {string} include    A query to add to the HTTP Request
-     * @param  {string} extension the file extension to give to the file
+     * @param  {node-rest-client.Client} client - client with the authorization from 
+     * @param  {string} instance - the instance name in the URL
+     * @param  {string} scriptTable -  A type of script in ServiceNow
+     * @param  {string} include  - A query to add to the HTTP Request
+     * @param  {string} extension -  the file extension to give to the file
      */
     function makeRequest(client, instance, scriptTable, include, extension) {
         url = 'https://' + instance + '.service-now.com/api/now/table/' + scriptTable + '?sysparm_limit=1'
